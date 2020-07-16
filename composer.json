@@ -8,14 +8,19 @@
             "email": "nbczw8750@qq.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "require-dev":{
-        "topthink/framework": "5.0.*"
+        "topthink/framework": "5.0.*",
+        "phpunit/phpunit": "^4.8.26"
     },
 	"autoload": {
         "psr-4": {
             "nbczwphp\\authdata\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "nbczwphp\\authdata\\tests\\": "tests/"
         }
     }
 }

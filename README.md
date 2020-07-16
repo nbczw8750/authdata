@@ -17,4 +17,4 @@ CREATE TABLE `auth_data` (
 ## 技巧
 1. 规则`name`字段可以是`模块/控制器/方法`
 2. 查出的`sql`值，直接传入`where`方法
-3. 查出的`sql`值里有变量值，可以解析后再使用
+3. 查出的`sql`值里有变量值，可以解析后再使用，例uid={user_id} and name like '{name}，变量{xxx}表示

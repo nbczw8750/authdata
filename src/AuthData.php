@@ -37,7 +37,7 @@ class AuthData
 
     public function getAuthData($name)
     {
-        return \think\Db::table($this->_config['auth_data'])->where("name", $name)->where("status",1)->find();
+        return \think\Db::table($this->_config['auth_data'])->where("name", $name)->where("status", 1)->find();
     }
 
     public function insertAuthData($data)
@@ -48,5 +48,20 @@ class AuthData
     public function updateAuthData($name, $data)
     {
         return \think\Db::table($this->_config['auth_data'])->where("name", $name)->update($data);
+    }
+
+    /**
+     * sql 变量替换
+     * uid={user_id} and name like '{name}' {}替换 $vars对于的键的值
+     * @param $sql
+     * @param array $vars
+     * @return mixed
+     */
+    public function sqlParse($sql, $vars = [])
+    {
+        $sql = preg_replace_callback('/\{(\w*?)\}/', function ($matches) use ($vars) {
+            return $vars[$matches[1]];
+        }, $sql);
+        return $sql;
     }
 }
