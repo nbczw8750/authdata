@@ -1,0 +1,21 @@
+{
+    "name": "nbczwphp/authdata",
+    "description": "数据级权限",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nbczw8750",
+            "email": "nbczw8750@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev":{
+        "topthink/framework": "5.0.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "nbczwphp\\authdata\\": "src"
+        }
+    }
+}
